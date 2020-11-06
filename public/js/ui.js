@@ -88,7 +88,6 @@ const updateUI = async () => {
   }
 
   console.log("UI updated");
-  showUserProfile(profile);
 };
 
 window.onpopstate = (e) => {
