@@ -7,7 +7,7 @@ window.addEventListener('load', function() {
     redirectUri: AUTH0_CALLBACK_URL
   });
 
-  document.getElementById('qsLoginBtn').addEventListener('click', function() {
+  document.getElementById('btn-logon').addEventListener('click', function() {
     webAuth.authorize();
   });
 
