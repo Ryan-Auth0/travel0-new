@@ -85,7 +85,8 @@ const updateUI = async () => {
     return;
   }
 
-  console.log("UI updated");
+  console.log("UI updated -ui.js script");
+  showUserProfile(profile);
 };
 
 window.onpopstate = (e) => {
