@@ -12,7 +12,7 @@ window.addEventListener('load', function() {
   });
 
   document.getElementById('btn-logout').addEventListener('click', function() {
-    logout();
+    webAuth.authorize();
   });
 
   webAuth.parseHash({ hash: window.location.hash }, (err, authResult) => {
