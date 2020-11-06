@@ -42,6 +42,7 @@ window.addEventListener('load', function() {
   var checkAuth = function() {
     var token = localStorage.getItem('token');
     if (token) {
+      console.log("checkAuth");
       var user_profile = JSON.parse(localStorage.getItem('profile'));
       showUserProfile(user_profile);
     } // else: not authorized
