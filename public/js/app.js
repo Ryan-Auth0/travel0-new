@@ -14,10 +14,12 @@ window.addEventListener('load', function() {
   webAuth.parseHash({ hash: window.location.hash }, (err, authResult) => {
     if (err) {
       return console.error(err);
+      console.log("webAuth.parseHash function")
     }
     if (authResult) {
       webAuth.client.userInfo(authResult.accessToken, (err, profile) => {
         if (err) {
+          console.log("webAuth.parseHash function 2")
           // Remove expired token (if any)
           localStorage.removeItem('token');
           // Remove expired profile (if any)
@@ -25,6 +27,7 @@ window.addEventListener('load', function() {
           console.log("remove items");
           return alert('There was an error getting the profile: ' + err.message);
         } else {
+          console.log("webAuth.parseHash function 3")
           localStorage.setItem('token', authResult.accessToken);
           localStorage.setItem('profile', JSON.stringify(profile));
           console.log("show tokens/profile");
