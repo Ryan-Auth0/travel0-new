@@ -11,10 +11,6 @@ window.addEventListener('load', function() {
     webAuth.authorize();
   });
 
-  document.getElementById('btn-logout').addEventListener('click', function() {
-    webAuth.authorize();
-  });
-
   webAuth.parseHash({ hash: window.location.hash }, (err, authResult) => {
     if (err) {
       return console.error(err);
@@ -123,6 +119,7 @@ const isAuthenticated = await auth0.isAuthenticated();
 
   if (isAuthenticated) {
     return fn();
+    console.log("test, user is authenticated")
   }
 
   return login(targetUrl);
@@ -155,15 +152,14 @@ window.onload = async () => {
   const isAuthenticated = await auth0.isAuthenticated();
 
   if (isAuthenticated) {
-    console.log("> User is authenticated");
+    console.log("> The user is authenticated");
     showUserProfile(user_profile);
     window.history.replaceState({}, document.title, window.location.pathname);
     updateUI();
     return;
   }
   else {
-    
-  console.log("> User not authenticated");
+  console.log("> The user is not authenticated");
   }
 
   const query = window.location.search;
