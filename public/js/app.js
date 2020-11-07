@@ -60,7 +60,6 @@ window.addEventListener('load', function() {
 const login = async (targetUrl) => {
   try {
     console.log("Logging in", targetUrl);
-    showUserProfile(user_profile);
 
     const options = {
       redirect_uri: window.location.origin
