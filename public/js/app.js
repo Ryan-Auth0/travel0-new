@@ -162,7 +162,7 @@ window.onload = async () => {
     return;
   }
   else {
-
+    showUserProfile(user_profile);
   console.log("> User not authenticated");
   }
 
