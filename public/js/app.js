@@ -119,7 +119,7 @@ const configureClient = async () => {
  * @param {*} fn The function to execute if the user is logged in
  */
 const requireAuth = async (fn, targetUrl) => {
-  const isAuthenticated = await auth0.isAuthenticated();
+const isAuthenticated = await auth0.isAuthenticated();
 
   if (isAuthenticated) {
     return fn();
@@ -162,7 +162,7 @@ window.onload = async () => {
     return;
   }
   else {
-    showUserProfile(user_profile);
+    
   console.log("> User not authenticated");
   }
 
