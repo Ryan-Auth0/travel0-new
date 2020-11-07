@@ -175,6 +175,7 @@ window.onload = async () => {
       }
 
       console.log("Logged in!");
+      showUserProfile(user_profile);
     } catch (err) {
       console.log("Error parsing redirect:", err);
     }
