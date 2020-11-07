@@ -44,7 +44,6 @@ window.addEventListener('load', function() {
     if (token) {
       console.log("checkAuth");
       var user_profile = JSON.parse(localStorage.getItem('profile'));
-      showUserProfile(user_profile);
     } // else: not authorized
   };
 
@@ -52,12 +51,6 @@ window.addEventListener('load', function() {
     console.log("Full Contact details", profile.user_metadata.fullcontact);
   };
 
-  var logout = function() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('profile');
-    window.location.href = "/";
-    console.log("logout prompt");
-  };
 
   checkAuth();
 });
@@ -67,6 +60,7 @@ window.addEventListener('load', function() {
 const login = async (targetUrl) => {
   try {
     console.log("Logging in", targetUrl);
+    showUserProfile(user_profile);
 
     const options = {
       redirect_uri: window.location.origin
@@ -163,6 +157,7 @@ window.onload = async () => {
 
   if (isAuthenticated) {
     console.log("> User is authenticated");
+    showUserProfile(user_profile);
     window.history.replaceState({}, document.title, window.location.pathname);
     updateUI();
     return;
