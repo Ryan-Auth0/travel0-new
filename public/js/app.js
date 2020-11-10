@@ -15,7 +15,7 @@ window.addEventListener('load', function() {
     webAuth.authorize();
   });
 
-  if (user.Age != undefined)
+  if (user.Age !== undefined && user.Age !== null)
   {
     $("ageknown").show(); }
      else {$("ageunknown").show();}
