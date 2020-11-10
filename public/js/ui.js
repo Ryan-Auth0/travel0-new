@@ -62,6 +62,11 @@ const updateUI = async () => {
   try {
     const isAuthenticated = await auth0.isAuthenticated();
 
+    if (isAuthenticated)
+    {
+      eachElement(".ageKnown", (e) => e.classList.remove("hidden")); }
+       else {eachElement(".ageUnknown", (e) => e.classList.remove("hidden"));}
+
     if (isAuthenticated) {
       const user = await auth0.getUser();
 
