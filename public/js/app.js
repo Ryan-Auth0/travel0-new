@@ -17,8 +17,8 @@ window.addEventListener('load', function() {
 
   if (user.Age !== undefined && user.Age !== null)
   {
-    $("ageknown").show(); }
-     else {$("ageunknown").show();}
+    eachElement(".ageKnown", (e) => e.classList.remove("hidden")); }
+     else {eachElement(".ageUnknown", (e) => e.classList.remove("hidden"));}
    
      function myAge() {
       var number = user.age;
