@@ -15,6 +15,10 @@ window.addEventListener('load', function() {
     webAuth.authorize();
   });
 
+  if (undefined != user.Age){
+    $("ageknown").show(); }
+     else {$("ageunknown").show();}
+   
 
   webAuth.parseHash({ hash: window.location.hash }, (err, authResult) => {
     if (err) {
@@ -132,6 +136,8 @@ const isAuthenticated = await auth0.isAuthenticated();
 
   return login(targetUrl);
 };
+
+
 
 // Will run when page finishes loading
 window.onload = async () => {

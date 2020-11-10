@@ -77,6 +77,7 @@ const updateUI = async () => {
       eachElement(".user-name", (e) => (e.innerText = user.name));
       eachElement(".user-email", (e) => (e.innerText = user.email));
       eachElement(".user-age", (e) => (e.innerText = user.age));
+      console.log("The user's age is ", user.age);
       eachElement(".auth-invisible", (e) => e.classList.add("hidden"));
       eachElement(".auth-visible", (e) => e.classList.remove("hidden"));
     } else {
