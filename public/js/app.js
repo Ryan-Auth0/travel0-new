@@ -15,10 +15,15 @@ window.addEventListener('load', function() {
     webAuth.authorize();
   });
 
-  if (undefined != user.Age){
+  if (user.Age != undefined)
+  {
     $("ageknown").show(); }
      else {$("ageunknown").show();}
    
+     function myAge() {
+      var number = user.age;
+      document.getElementById("showAge").innerHTML = number;
+    }
 
   webAuth.parseHash({ hash: window.location.hash }, (err, authResult) => {
     if (err) {
