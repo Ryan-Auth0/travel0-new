@@ -7,18 +7,14 @@ window.addEventListener('load', function() {
     redirectUri: AUTH0_CALLBACK_URL
   });
 
-  document.getElementById('btn-logon').addEventListener('click', function() {
-    webAuth.authorize();
-  });
+ // document.getElementById('btn-logon').addEventListener('click', function() {
+ //   webAuth.authorize();
+ // });
 
   document.getElementById('qsLoginBtn').addEventListener('click', function() {
     webAuth.authorize();
   });
 
-  if (user.Age !== undefined && user.Age !== null)
-  {
-    eachElement(".ageKnown", (e) => e.classList.remove("hidden")); }
-     else {eachElement(".ageUnknown", (e) => e.classList.remove("hidden"));}
    
      function myAge() {
       var number = user.age;
