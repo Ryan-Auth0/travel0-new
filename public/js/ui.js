@@ -62,7 +62,7 @@ const updateUI = async () => {
   try {
     const isAuthenticated = await auth0.isAuthenticated();
 
-    if (isAuthenticated && user.age !== undefined)
+    if (isAuthenticated && user.email !== undefined)
     {
       eachElement(".ageKnown", (e) => e.classList.remove("hidden"));
       eachElement(".ageUnknown", (e) => e.classList.add("hidden")); 
