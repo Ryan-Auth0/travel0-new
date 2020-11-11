@@ -66,10 +66,12 @@ const updateUI = async () => {
     {
       eachElement(".ageKnown", (e) => e.classList.remove("hidden"));
       eachElement(".ageUnknown", (e) => e.classList.add("hidden")); 
+      console.log("Age is known");
     }
     else {
          eachElement(".ageUnknown", (e) => e.classList.remove("hidden"));
          eachElement(".ageKnown", (e) => e.classList.add("hidden"));;
+         console.log("Age is unknown");
         }
 
     if (isAuthenticated) {
