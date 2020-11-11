@@ -62,15 +62,15 @@ const updateUI = async () => {
   try {
     const isAuthenticated = await auth0.isAuthenticated();
 
-    if (isAuthenticated && getFullContactProfile(user.age) !== undefined)
+    if (isAuthenticated)
     {
-      eachElement(".ageKnown", (e) => e.classList.remove("hidden"));
-      eachElement(".ageUnknown", (e) => e.classList.add("hidden")); 
+      $(".ageUnknown").addClass("hidden");
+      $(".ageKnown").removeClass("hidden");
       console.log("Age is known");
     }
     else {
-         eachElement(".ageUnknown", (e) => e.classList.remove("hidden"));
-         eachElement(".ageKnown", (e) => e.classList.add("hidden"));;
+      $(".ageUnknown").removeClass("hidden");
+      $(".ageKnown").addClass("hidden");
          console.log("Age is unknown");
         }
 
