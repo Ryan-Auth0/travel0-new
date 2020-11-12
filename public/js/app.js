@@ -15,11 +15,7 @@ window.addEventListener('load', function() {
     webAuth.authorize();
   });
 
-   
-     function myAge() {
-      var number = user.age;
-      document.getElementById("showAge").innerHTML = number;
-    }
+  
 
   webAuth.parseHash({ hash: window.location.hash }, (err, authResult) => {
     if (err) {

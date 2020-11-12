@@ -55,6 +55,7 @@ const showContent = (id) => {
   document.getElementById(id).classList.remove("hidden");
 };
 
+
 /**
  * Updates the user interface
  */
@@ -62,7 +63,7 @@ const updateUI = async () => {
   try {
     const isAuthenticated = await auth0.isAuthenticated();
 
-    if (isAuthenticated)
+    if (isAuthenticated && getFullContactProfile(user))
     {
       $(".ageUnknown").addClass("hidden");
       $(".ageKnown").removeClass("hidden");
@@ -76,7 +77,7 @@ const updateUI = async () => {
 
     if (isAuthenticated) {
       const user = await auth0.getUser();
-
+      console.log("user: "+user.fullcontact.details.age.value); 
       document.getElementById("profile-data").innerText = JSON.stringify(
         user,
         null,
