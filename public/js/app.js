@@ -104,7 +104,6 @@ window.onload = async () => {
 
   if (isAuthenticated) {
     console.log("> The user is authenticated");
-    showUserProfile(user_profile);
     window.history.replaceState({}, document.title, window.location.pathname);
     updateUI();
     return;
@@ -126,7 +125,6 @@ window.onload = async () => {
       }
 
       console.log("Logged in!");
-      showUserProfile(user_profile);
     } catch (err) {
       console.log("Error parsing redirect:", err);
     }
