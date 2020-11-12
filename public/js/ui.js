@@ -63,7 +63,7 @@ const updateUI = async () => {
   try {
     const isAuthenticated = await auth0.isAuthenticated();
 
-    if (isAuthenticated && getFullContactProfile(user))
+    if (isAuthenticated)
     {
       $(".ageUnknown").addClass("hidden");
       $(".ageKnown").removeClass("hidden");
