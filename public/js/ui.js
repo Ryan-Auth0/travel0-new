@@ -77,7 +77,7 @@ const updateUI = async () => {
 
     if (isAuthenticated) {
       const user = await auth0.getUser();
-      console.log("user: "+user.fullcontact.details.age.value); 
+      //console.log("user: "+user.fullcontact.details.age.value); 
       document.getElementById("profile-data").innerText = JSON.stringify(
         user,
         null,
