@@ -1,20 +1,5 @@
 
-window.addEventListener('load', function() {
-  var webAuth = new auth0.WebAuth({
-    clientID: AUTH0_CLIENT_ID, 
-    domain: AUTH0_DOMAIN,
-    scope: 'openid profile email',
-    responseType: 'token',
-    redirectUri: AUTH0_CALLBACK_URL
-  });
-  
-var checkAuth = function() {
-  var token = localStorage.getItem('token');
-  if (token) {
-    var user_profile = JSON.parse(localStorage.getItem('profile'));
-    //showUserProfile(user_profile);
-  } // else: not authorized
-};
+
 
 /**
  * Starts the authentication flow
@@ -154,3 +139,4 @@ window.onload = async () => {
 
   updateUI();
 };
+
