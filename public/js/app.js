@@ -1,4 +1,44 @@
 
+window.addEventListener('load', function() {
+  var webAuth = new auth0.WebAuth({
+    clientID: AUTH0_CLIENT_ID, 
+    domain: AUTH0_DOMAIN,
+    scope: 'openid profile email',
+    responseType: 'token',
+    redirectUri: AUTH0_CALLBACK_URL
+  });
+  
+var checkAuth = function() {
+  var token = localStorage.getItem('token');
+  if (token) {
+    var user_profile = JSON.parse(localStorage.getItem('profile'));
+    //showUserProfile(user_profile);
+  } // else: not authorized
+};
+
+webAuth.parseHash({ hash: window.location.hash }, (err, authResult) => {
+  if (err) {
+    return console.error(err);
+
+  }
+  if (authResult) {
+    webAuth.client.userInfo(authResult.accessToken, (err, profile) => {
+      if (err) {
+        // Remove expired token (if any)
+        localStorage.removeItem('token');
+        // Remove expired profile (if any)
+        localStorage.removeItem('profile');
+        return alert('There was an error getting the profile: ' + err.message);
+      } else {
+        localStorage.setItem('token', authResult.accessToken);
+        localStorage.setItem('profile', JSON.stringify(profile));
+        showUserProfile(profile);
+      }
+      window.location.hash = "";
+    });
+  }
+});
+
 /**
  * Starts the authentication flow
  */

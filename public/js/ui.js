@@ -44,12 +44,7 @@ const showContentFromUrl = (url) => {
 const isRouteLink = (element) =>
   element.tagName === "A" && element.classList.contains("route-link");
 
-/**
- * Displays a content panel specified by the given element id.
- * All the panels that participate in this flow should have the 'page' class applied,
- * so that it can be correctly hidden before the requested content is shown.
- * @param {*} id The id of the content to show
- */
+  
 const showContent = (id) => {
   eachElement(".page", (p) => p.classList.add("hidden"));
   document.getElementById(id).classList.remove("hidden");
@@ -63,7 +58,7 @@ const updateUI = async () => {
   try {
     const isAuthenticated = await auth0.isAuthenticated();
 
-    if (isAuthenticated)
+   /** if (isAuthenticated)
     {
       $(".ageUnknown").addClass("hidden");
       $(".ageKnown").removeClass("hidden");
@@ -73,7 +68,7 @@ const updateUI = async () => {
       $(".ageUnknown").removeClass("hidden");
       $(".ageKnown").addClass("hidden");
          console.log("Age is unknown");
-        }
+        } */
 
     if (isAuthenticated) {
       const user = await auth0.getUser();
